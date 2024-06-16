@@ -1,1 +1,18 @@
-<p>by-region-page works!</p>
+<h2>Por Capital</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- SearchBox -->
+     <button *ngFor="let region of regions" [ngClass]="{'btn-outline-primary': selectedRegion ===region}" class="btn mx-2" (click)="searchByRegion(region)">{{region}}</button>
+    <!-- <shared-search-box (onDebounce)="searchByRegion($event)" placeholder="Buscar por Region"></shared-search-box> -->
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <hr>
+    <countries-table [countries]="countries"></countries-table>
+  </div>
+</div>
+
